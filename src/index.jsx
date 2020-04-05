@@ -10,6 +10,7 @@ import { createHistory as history } from 'history';
 import '../assets/stylesheets/application.scss';
 import carsReducer from './reducers/carsReducer';
 import CarsIndex from './containers/CarsIndex';
+import CarsNew from './containers/CarsNew';
 
 // eslint-disable-next-line no-alert
 const garageName = prompt("What's your garage's name?") || `garage${Math.floor(10 + (Math.random() * 90))}`;
@@ -44,6 +45,7 @@ ReactDOM.render(
     <Router history={history}>
       <Switch>
         <Route path="/" exact component={CarsIndex} />
+        <Route path="/CarsNew" exact component={CarsNew} />
       </Switch>
     </Router>
   </Provider>,
