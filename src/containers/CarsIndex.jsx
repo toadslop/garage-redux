@@ -9,7 +9,7 @@ import Sidebar from './Sidebar';
 class CarsIndex extends Component {
   componentDidMount() {
     const { garage } = this.props;
-    this.props.fetchCars();
+    this.props.fetchCars(garage);
   }
 
   renderCars() {
@@ -36,7 +36,7 @@ class CarsIndex extends Component {
   render() {
     return (
       <div className="container">
-        <Sidebar />
+        <Sidebar path={this.props.match.path} />
         <div className="cars-list">
           {this.renderCars()}
         </div>

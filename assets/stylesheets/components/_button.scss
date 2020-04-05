@@ -1,0 +1,11 @@
+.button {
+  border: 1px solid black;
+  text-decoration: none;
+  font-weight: bold;
+  color: black;
+  padding: 8px 24px;
+  transition: 0.1s;
+  &:hover {
+    box-shadow: 1px 1px 4px rgba(0,0,0,0.5);
+  }
+}
