@@ -19,10 +19,11 @@ const defaultCars = [
   { id: 3, brand: 'Aston Martin', model: 'DB Mark III', owner: 'James', plate: '418-ED-94' },
   { id: 4, brand: 'VW', model: 'Beetle', owner: 'George', plate: '1234-XD-75' }
 ];
+
 const garage = {
   name: garageName,
   description: "This is a nice garage."
-}
+};
 
 const initialState = {
   garage,
