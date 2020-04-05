@@ -1,4 +1,18 @@
+@import 'variables';
+@import './components/index';
+
 .app {
   margin-top: 20px;
   margin-bottom: 20px;
+}
+
+.container {
+  position: sticky;
+  background-color: $grey;
+  border-radius: 4px;
+  box-shadow: 2px 2px 8px rgba(0,0,0,0.3);
+  margin: 5vh auto;
+  width: 90%;
+  height: 90vh;
+  display: flex;
 }

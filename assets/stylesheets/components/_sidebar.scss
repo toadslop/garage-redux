@@ -1,0 +1,38 @@
+.sidebar {
+  width: 300px;
+  background-color: white;
+  border-right: 1px solid white;
+  border-top-left-radius: 4px;
+  border-bottom-left-radius: 4px;
+}
+
+.garage-banner {
+  border-top-left-radius: 4px;
+  background-image: url('https://images.unsplash.com/photo-1551522435-a13afa10f103?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2250&q=80');
+  background-size: cover;
+  height: 250px;
+  width: 100%;
+}
+
+.sidebare-images {
+  position: relative;
+}
+
+.sidebar-logo {
+  position: absolute;
+  height: 80px;
+  border-radius: 50%;
+  padding: 20px;
+  background-color: $grey;
+  top: 188px;
+  left: 90px;
+  img {
+    height: 72px;
+  }
+}
+
+.sidebar-content {
+  margin-top: 64px;
+  padding: 0 16px;
+  text-align: center;
+}
