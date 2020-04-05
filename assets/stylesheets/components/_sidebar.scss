@@ -1,5 +1,5 @@
 .sidebar {
-  width: 300px;
+  min-width: 300px;
   background-color: white;
   border-right: 1px solid white;
   border-top-left-radius: 4px;
@@ -26,6 +26,7 @@
   background-color: $grey;
   top: 188px;
   left: 90px;
+  border: 2px solid black;
   img {
     height: 72px;
   }

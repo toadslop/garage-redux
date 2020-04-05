@@ -10,10 +10,16 @@ class CarsIndex extends Component {
       return (
         // <Link to={`/posts/${post.id}`} key={post.id}>
         <div className="car-card" key={car.id}>
-          <h3>{car.brand}</h3>
-          <h3>{car.model}</h3>
-          <p>{car.owner}</p>
-          <p>{car.plate}</p>
+          <div className="car-image">
+            <img
+              src="https://www.freeiconspng.com/uploads/hipster-glasses-on-face-views-png-photo-22.png"
+              alt="a car"
+            />
+          </div>
+          <div className="card-content">
+            <h3>{car.brand} - {car.model}</h3>
+            <p><span className="owner">Owner:</span> {car.owner}</p>
+          </div>
         </div>
         // </Link>
       );
