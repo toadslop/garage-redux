@@ -2,8 +2,9 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import { fetchCars } from '../actions';
+import { Link } from 'react-router-dom';
 
+import { fetchCars } from '../actions';
 import Sidebar from './Sidebar';
 
 class CarsIndex extends Component {
@@ -25,20 +26,20 @@ class CarsIndex extends Component {
   renderCars() {
     return this.props.cars.map((car) => {
       return (
-        // <Link to={`/posts/${post.id}`} key={post.id}>
-        <div className="car-card" key={car.id}>
-          <div className="car-image">
-            <img
-              src="https://www.freeiconspng.com/uploads/hipster-glasses-on-face-views-png-photo-22.png"
-              alt="a car"
-            />
+        <Link to={`/cars/${car.id}`} key={car.id}>
+          <div className="car-card" key={car.id}>
+            <div className="car-image">
+              <img
+                src="https://www.freeiconspng.com/uploads/hipster-glasses-on-face-views-png-photo-22.png"
+                alt="a car"
+              />
+            </div>
+            <div className="card-content">
+              <h3>{car.brand} - {car.model}</h3>
+              <p><span className="owner">Owner:</span> {car.owner}</p>
+            </div>
           </div>
-          <div className="card-content">
-            <h3>{car.brand} - {car.model}</h3>
-            <p><span className="owner">Owner:</span> {car.owner}</p>
-          </div>
-        </div>
-        // </Link>
+        </Link>
       );
     });
   }

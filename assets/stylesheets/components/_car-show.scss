@@ -1,0 +1,40 @@
+.car-show {
+  background-color: white;
+  height: 100%;
+  width: 100%;
+  display: flex;
+}
+
+.car-padding {
+  padding: 24px;
+}
+
+.car-image {
+  background-image: url("https://www.freeiconspng.com/uploads/hipster-glasses-on-face-views-png-photo-22.png");
+  background-size: 90%;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 50%;
+}
+
+.car-info {
+  width: 50%;
+  padding: 20px;
+  h3 {
+    font-size: 48px;
+    margin: 0px;
+  }
+}
+
+.light {
+  font-weight: normal;
+}
+
+.plate-holder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 28px;
+  border: 1px solid black;
+  padding: 28px;
+}

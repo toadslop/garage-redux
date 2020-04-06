@@ -3,6 +3,12 @@
   width: 100%;
 }
 
+a,
+a:hover,
+a:focus {
+  text-decoration: none;
+}
+
 .car-card {
   display: flex;
   padding: 20px;
@@ -18,12 +24,17 @@
     text-transform: uppercase;
     font-weight: bold;
     font-size: 36px;
+    text-decoration: none;
+    color: black;
   }
   p {
     font-size: 24px;
+    text-decoration: none;
+    color: black;
   }
   .owner {
     font-weight: bold;
+    color: black;
   }
 }
 

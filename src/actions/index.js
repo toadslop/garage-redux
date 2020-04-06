@@ -1,12 +1,13 @@
 /* eslint-disable import/prefer-default-export */
 const urlBase = "https://wagon-garage-api.herokuapp.com/";
-const urlEnd = "/cars";
+const urlEnd = "cars";
 
 export const FETCH_CARS = "FETCH_CARS";
 export const CREATE_CAR = "CREATE_CARS";
+export const FETCH_CAR = "FETCH_CAR";
 
 export function createCar(body, garage, callback) {
-  const request = fetch(`${urlBase}${garage}${urlEnd}`, {
+  const request = fetch(`${urlBase}${garage}/${urlEnd}`, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify(body)
@@ -15,6 +16,15 @@ export function createCar(body, garage, callback) {
   return {
     type: CREATE_CAR,
     payload: request
+  };
+}
+
+export function fetchCar(id) {
+  const promise = fetch(`${urlBase}/${urlEnd}/${id}`)
+    .then(response => response.json());
+  return {
+    type: FETCH_CAR,
+    payload: promise
   };
 }
 
