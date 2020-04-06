@@ -4,7 +4,17 @@ import { reduxForm, Field } from 'redux-form';
 import { connect } from 'react-redux';
 import Sidebar from './Sidebar';
 
+import { createCar } from '../actions';
+
 class CarsNew extends Component {
+  onSubmit = (values) => {
+    const { garage } = this.props;
+    this.props.createCar(values, garage, (car) => {
+      this.props.history.push('/'); // Navigate after submit
+      return car;
+    });
+  }
+
   renderField = (field) => {
     return (
       <div className="form-group">
@@ -24,7 +34,7 @@ class CarsNew extends Component {
         <Sidebar path={this.props.match.path} />
         <div className="right-scene">
           <div className="form-box">
-            <form>
+            <form onSubmit={this.props.handleSubmit(this.onSubmit)}>
               <Field
                 label="Brand"
                 name="brand"
@@ -64,6 +74,10 @@ class CarsNew extends Component {
   }
 }
 
+function mapStateToProps(state) {
+  return { garage: state.garage };
+}
+
 export default reduxForm({ form: 'newCarForm' })(
-  connect(null, {})(CarsNew)
+  connect(mapStateToProps, { createCar })(CarsNew)
 );

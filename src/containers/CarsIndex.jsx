@@ -12,6 +12,16 @@ class CarsIndex extends Component {
     this.props.fetchCars(garage);
   }
 
+  getImage = (car) => {
+    const baseUrl = "https://pixabay.com/api/?";
+    const apiKey = "key=15899465-8b7c5523663c01750d003e03c";
+    const query = `&q=${car.model}`;
+    const promise = fetch(`${baseUrl}${apiKey}${query}`)
+      .then(response => response.data);
+    console.log(promise);
+    return promise.hits;
+  }
+
   renderCars() {
     return this.props.cars.map((car) => {
       return (
