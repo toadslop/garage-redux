@@ -12,6 +12,12 @@ class CarsShow extends Component {
     }
   }
 
+  handleClick = () => {
+    this.props.deleteCar(this.props.car.id, () => {
+      this.props.history.push('/');
+    });
+  }
+
   render() {
     const { car } = this.props;
     if (!car) {
@@ -29,17 +35,21 @@ class CarsShow extends Component {
         <Sidebar />
         <div className="right-scene car-padding">
           <div className="car-show">
-            <div className="car-image" />
+            <div className="car-show-image" >
+              <img src="https://www.freeiconspng.com/uploads/hipster-glasses-on-face-views-png-photo-22.png" />
+            </div>
             <div className="car-info">
               <div>
-                <h3>Brand: <span className="light">{car.brand}</span></h3>
-                <h3>Model: <span className="light">{car.model}</span></h3>
+                <h3><span className="light">{car.brand} - {car.model}</span></h3>
                 <h3>Owner: <span className="light">{car.owner}</span></h3>
               </div>
               <div className="plate-holder">
                 <div className="plate">
                   <h3 className="lighter">{car.plate}</h3>
                 </div>
+              </div>
+              <div onClick={this.handleClick} className="delete-button">
+                delete
               </div>
             </div>
           </div>

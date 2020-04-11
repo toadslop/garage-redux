@@ -8,7 +8,7 @@ class Sidebar extends Component {
     const { path } = this.props;
     if (path === "/") {
       return (
-        <Link className="button" to="/CarsNew">
+        <Link className="button" to="/cars/new">
           Add a car
         </Link>
       );
